@@ -42,24 +42,25 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme
+            .of(context)
+            .colorScheme
+            .inversePrimary,
         title: const Text("Flutter大学"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              child: Text(
-                  "KBOYさん",
-                textAlign: TextAlign.center,
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Container(
+          width: double.infinity,
+          child: TextField(
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: 'ここに入力してください',
             ),
-            Text("KGIRLさん"),
-          ],
+            autofocus: true,
+          ),
         ),
       ),
     );
   }
 }
-
