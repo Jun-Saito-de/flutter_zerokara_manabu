@@ -48,16 +48,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
-            Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-            ElevatedButton(
-              child: Text("次へ"),
-              onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => NextPage("KBOYさん"))
-                );
-              }, // ここに、ボタンを押したときに呼ばれるコードを書く
+            Container(
+              width: double.infinity,
+              child: Text(
+                  "KBOYさん",
+                textAlign: TextAlign.center,
+              ),
             ),
+            Text("KGIRLさん"),
           ],
         ),
       ),
