@@ -38,6 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final myFocusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +54,20 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(20.0),
         child: Container(
           width: double.infinity,
-          child: TextField(
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: 'ここに入力してください',
-            ),
-            autofocus: true,
+          child: Column(
+            children: [
+              TextField(
+              ),
+              TextField(
+                focusNode: myFocusNode, //ここでmyFocusNodeを渡す
+              ),
+              ElevatedButton(
+                child: Text("フォーカス"),
+                onPressed: (){
+                  myFocusNode.requestFocus();
+                },
+              ),
+          ],
           ),
         ),
       ),
